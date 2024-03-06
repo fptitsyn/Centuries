@@ -1,12 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayButton : MonoBehaviour
+namespace UI
 {
-    public void LoadScene(string sceneName)
+    public class SceneLoader : MonoBehaviour
     {
-        SceneManager.LoadScene(sceneName);
+        public void LoadScene(int sceneIndex)
+        {
+            SceneManager.LoadScene(sceneIndex);
+        }
     }
 }
