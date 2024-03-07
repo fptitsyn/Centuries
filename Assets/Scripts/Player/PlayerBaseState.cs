@@ -40,7 +40,7 @@ namespace Player
         }
 
         protected void ApplyGravity()
-        {
+        {       
             if (_stateMachine.velocity.y > Physics.gravity.y)
             {
                 _stateMachine.velocity.y += Physics.gravity.y * Time.deltaTime;
