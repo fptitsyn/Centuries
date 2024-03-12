@@ -10,6 +10,7 @@ namespace CharacterControls
         public Vector2 moveComposite;
 
         public Action OnJumpPerformed;
+        public Action OnInteractPerformed;
 
         private Controls _controls;
 
@@ -48,6 +49,16 @@ namespace CharacterControls
         public void OnLook(InputAction.CallbackContext context)
         {
             mouseDelta = context.ReadValue<Vector2>();
+        }
+
+        public void OnInteract(InputAction.CallbackContext context)
+        {
+            if (!context.performed)
+            {
+                return;
+            }
+
+            OnInteractPerformed?.Invoke();
         }
     }
 }

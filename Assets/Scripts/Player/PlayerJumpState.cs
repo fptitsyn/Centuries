@@ -14,7 +14,7 @@ namespace Player
             _stateMachine.velocity =
                 new Vector3(_stateMachine.velocity.x, _stateMachine.JumpForce, _stateMachine.velocity.z);
             
-            _stateMachine.Animator.CrossFadeInFixedTime(_jumpHash, CrossFadeDuration);
+            // _stateMachine.Animator.CrossFadeInFixedTime(_jumpHash, CrossFadeDuration);
         }
 
         public override void Tick()

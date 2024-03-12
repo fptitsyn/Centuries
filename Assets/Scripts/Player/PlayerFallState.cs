@@ -13,7 +13,7 @@ namespace Player
         {
             _stateMachine.velocity.y = 0f;
             
-            _stateMachine.Animator.CrossFadeInFixedTime(_fallHash, CrossFadeDuration);
+            // _stateMachine.Animator.CrossFadeInFixedTime(_fallHash, CrossFadeDuration);
         }
 
         public override void Tick()

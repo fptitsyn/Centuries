@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Interact;
+using UnityEngine;
 
 namespace Player
 {
@@ -15,7 +16,7 @@ namespace Player
         {
             _stateMachine.velocity.y = Physics.gravity.y;
             
-            _stateMachine.Animator.CrossFadeInFixedTime(_moveBlendTreeHash, CrossFadeDuration);
+            // _stateMachine.Animator.CrossFadeInFixedTime(_moveBlendTreeHash, CrossFadeDuration);
 
             _stateMachine.InputReader.OnJumpPerformed += SwitchToJumpState;
         }
@@ -28,10 +29,10 @@ namespace Player
             }
             
             CalculateMoveDirection();
-            FaceMoveDirection();
+            // FaceMoveDirection();
             Move();
             
-            _stateMachine.Animator.SetFloat(_moveSpeedHash, _stateMachine.InputReader.moveComposite.sqrMagnitude > 0f ? 1f : 0f, AnimationDampTime, Time.deltaTime);
+            // _stateMachine.Animator.SetFloat(_moveSpeedHash, _stateMachine.InputReader.moveComposite.sqrMagnitude > 0f ? 1f : 0f, AnimationDampTime, Time.deltaTime);
         }
 
         public override void Exit()
@@ -42,6 +43,31 @@ namespace Player
         private void SwitchToJumpState()
         {
             _stateMachine.SwitchState(new PlayerJumpState(_stateMachine));
+        }
+
+        private void PickUpItem(PickableItem item)
+        {
+            _stateMachine.PickedItem = item;
+
+            item.Rigidbody.isKinematic = true;
+            item.Rigidbody.velocity = Vector3.zero;
+            item.Rigidbody.angularVelocity = Vector3.zero;
+
+            item.transform.SetParent(_stateMachine.Slot);
+            item.transform.localPosition = Vector3.zero;
+            item.transform.localEulerAngles = Vector3.zero;
+        }
+
+        private void DropItem(PickableItem item)
+        {
+            // Remove reference
+            _stateMachine.PickedItem = null;
+            // Remove parent
+            item.transform.SetParent(null);
+            // Enable rigidbody
+            item.Rigidbody.isKinematic = false;
+            // Add force to throw item a little bit
+            item.Rigidbody.AddForce(item.transform.forward * 2, ForceMode.VelocityChange);
         }
     }
 }
