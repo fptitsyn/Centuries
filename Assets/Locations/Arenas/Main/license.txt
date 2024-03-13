@@ -1,0 +1,11 @@
+Model Information:
+* title:	Arena
+* source:	https://sketchfab.com/3d-models/arena-156cb7c238934bd2ac1c1addf39a19b7
+* author:	Robin (https://sketchfab.com/529193)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Arena" (https://sketchfab.com/3d-models/arena-156cb7c238934bd2ac1c1addf39a19b7) by Robin (https://sketchfab.com/529193) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
