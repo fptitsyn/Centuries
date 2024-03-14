@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 1.18
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 133347283e115d147a5fcce7f47a538f, type: 2}
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0.656
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6659458, g: 0.88264495, b: 0.88569474, a: 1}
+  m_IndirectSpecularColor: {r: 0.5498011, g: 0.73158985, b: 0.7341483, a: 0.656}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2327,19 +2327,31 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1272828966}
     m_Modifications:
     - target: {fileID: 3732445858389976631, guid: e21cd98e296955a4c9250f0c5fd328e5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3732445858389976631, guid: e21cd98e296955a4c9250f0c5fd328e5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3732445858389976631, guid: e21cd98e296955a4c9250f0c5fd328e5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3732445858389976631, guid: e21cd98e296955a4c9250f0c5fd328e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.895836
+      value: 218.95836
       objectReference: {fileID: 0}
     - target: {fileID: 3732445858389976631, guid: e21cd98e296955a4c9250f0c5fd328e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.000005722046
+      value: -0.00005722046
       objectReference: {fileID: 0}
     - target: {fileID: 3732445858389976631, guid: e21cd98e296955a4c9250f0c5fd328e5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.8562098
+      value: 78.562096
       objectReference: {fileID: 0}
     - target: {fileID: 3732445858389976631, guid: e21cd98e296955a4c9250f0c5fd328e5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2347,15 +2359,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3732445858389976631, guid: e21cd98e296955a4c9250f0c5fd328e5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3732445858389976631, guid: e21cd98e296955a4c9250f0c5fd328e5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3732445858389976631, guid: e21cd98e296955a4c9250f0c5fd328e5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3732445858389976631, guid: e21cd98e296955a4c9250f0c5fd328e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3601,6 +3613,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6234079026696812383, guid: 9fdbf6d666480df4f97e706bde3440a5, type: 3}
+--- !u!4 &703148856 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3732445858389976631, guid: e21cd98e296955a4c9250f0c5fd328e5, type: 3}
+  m_PrefabInstance: {fileID: 484574484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &738221127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5682,6 +5699,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4423254947938565345, guid: 86b3d7cf111f8e34ca0f290574f83b9f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 64050751}
+    - targetCorrespondingSourceObject: {fileID: 4423254947938565345, guid: 86b3d7cf111f8e34ca0f290574f83b9f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 703148856}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2736268508668926120, guid: 86b3d7cf111f8e34ca0f290574f83b9f, type: 3}
       insertIndex: -1
@@ -9434,4 +9454,3 @@ SceneRoots:
   - {fileID: 2091877401}
   - {fileID: 167653064}
   - {fileID: 765132796}
-  - {fileID: 484574484}

@@ -9,7 +9,6 @@ namespace CharacterControls
         public Vector2 mouseDelta;
         public Vector2 moveComposite;
 
-        public Action OnJumpPerformed;
         public Action OnInteractPerformed;
 
         private Controls _controls;
@@ -31,16 +30,6 @@ namespace CharacterControls
             _controls.Player.Disable();
         }
 
-        public void OnJump(InputAction.CallbackContext context)
-        {
-            if (!context.performed)
-            {
-                return;
-            }
-            
-            OnJumpPerformed?.Invoke();
-        }
-
         public void OnMove(InputAction.CallbackContext context)
         {
             moveComposite = context.ReadValue<Vector2>();
@@ -50,7 +39,7 @@ namespace CharacterControls
         {
             mouseDelta = context.ReadValue<Vector2>();
         }
-
+      
         public void OnInteract(InputAction.CallbackContext context)
         {
             if (!context.performed)
@@ -60,5 +49,6 @@ namespace CharacterControls
 
             OnInteractPerformed?.Invoke();
         }
+        
     }
 }

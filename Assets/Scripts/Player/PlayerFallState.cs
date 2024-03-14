@@ -2,6 +2,7 @@
 
 namespace Player
 {
+    /*
     public class PlayerFallState : PlayerBaseState
     {
         private readonly int _fallHash = Animator.StringToHash("Fall");
@@ -29,4 +30,5 @@ namespace Player
 
         public override void Exit() { }
     }
+    */
 }

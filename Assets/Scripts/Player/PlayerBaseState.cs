@@ -26,9 +26,10 @@ namespace Player
             _stateMachine.velocity.z = moveDirection.z * _stateMachine.MovementSpeed;
         }
 
-        protected void FaceMoveDirection()
+        protected void FaceLookingDirection()
         {
-            Vector3 faceDirection = new(_stateMachine.velocity.x, 0f, _stateMachine.velocity.z);
+            Vector3 camera = _stateMachine.MainCamera.forward;
+            Vector3 faceDirection = new Vector3(camera.x, 0f, camera.z);
 
             if (faceDirection == Vector3.zero)
             {
@@ -37,14 +38,6 @@ namespace Player
             
             _stateMachine.transform.rotation = Quaternion.Slerp(_stateMachine.transform.rotation, 
                 Quaternion.LookRotation(faceDirection), _stateMachine.LookRotationDampFactor * Time.deltaTime);
-        }
-
-        protected void ApplyGravity()
-        {       
-            if (_stateMachine.velocity.y > Physics.gravity.y)
-            {
-                _stateMachine.velocity.y += Physics.gravity.y * Time.deltaTime;
-            }
         }
 
         protected void Move()

@@ -13,23 +13,14 @@ namespace Player
         public PlayerMoveState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
         public override void Enter()
-        {
-            _stateMachine.velocity.y = Physics.gravity.y;
-            
+        {           
             // _stateMachine.Animator.CrossFadeInFixedTime(_moveBlendTreeHash, CrossFadeDuration);
-
-            _stateMachine.InputReader.OnJumpPerformed += SwitchToJumpState;
         }
 
         public override void Tick()
-        {
-            if (!_stateMachine.Controller.isGrounded)
-            {
-                _stateMachine.SwitchState(new PlayerFallState(_stateMachine));
-            }
-            
+        {    
             CalculateMoveDirection();
-            // FaceMoveDirection();
+            FaceLookingDirection();
             Move();
             
             // _stateMachine.Animator.SetFloat(_moveSpeedHash, _stateMachine.InputReader.moveComposite.sqrMagnitude > 0f ? 1f : 0f, AnimationDampTime, Time.deltaTime);
@@ -37,12 +28,7 @@ namespace Player
 
         public override void Exit()
         {
-            _stateMachine.InputReader.OnJumpPerformed -= SwitchToJumpState;
-        }
-
-        private void SwitchToJumpState()
-        {
-            _stateMachine.SwitchState(new PlayerJumpState(_stateMachine));
+            
         }
 
         private void PickUpItem(PickableItem item)

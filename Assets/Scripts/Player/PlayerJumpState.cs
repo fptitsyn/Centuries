@@ -2,6 +2,7 @@
 
 namespace Player
 {
+    /*
     public class PlayerJumpState : PlayerBaseState
     {
         private readonly int _jumpHash = Animator.StringToHash("Jump");
@@ -32,4 +33,5 @@ namespace Player
 
         public override void Exit() { }
     }
+    */
 }
