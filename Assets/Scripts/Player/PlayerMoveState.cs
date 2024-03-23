@@ -1,5 +1,4 @@
-﻿using Interact;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Player
 {
@@ -29,31 +28,6 @@ namespace Player
         public override void Exit()
         {
             
-        }
-
-        private void PickUpItem(PickableItem item)
-        {
-            _stateMachine.PickedItem = item;
-
-            item.Rigidbody.isKinematic = true;
-            item.Rigidbody.velocity = Vector3.zero;
-            item.Rigidbody.angularVelocity = Vector3.zero;
-
-            item.transform.SetParent(_stateMachine.Slot);
-            item.transform.localPosition = Vector3.zero;
-            item.transform.localEulerAngles = Vector3.zero;
-        }
-
-        private void DropItem(PickableItem item)
-        {
-            // Remove reference
-            _stateMachine.PickedItem = null;
-            // Remove parent
-            item.transform.SetParent(null);
-            // Enable rigidbody
-            item.Rigidbody.isKinematic = false;
-            // Add force to throw item a little bit
-            item.Rigidbody.AddForce(item.transform.forward * 2, ForceMode.VelocityChange);
         }
     }
 }

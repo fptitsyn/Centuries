@@ -2,14 +2,12 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace CharacterControls
+namespace Player.CharacterControls
 {
     public class InputReader : MonoBehaviour, Controls.IPlayerActions
     {
         public Vector2 mouseDelta;
         public Vector2 moveComposite;
-
-        public Action OnInteractPerformed;
 
         private Controls _controls;
 
@@ -39,16 +37,5 @@ namespace CharacterControls
         {
             mouseDelta = context.ReadValue<Vector2>();
         }
-      
-        public void OnInteract(InputAction.CallbackContext context)
-        {
-            if (!context.performed)
-            {
-                return;
-            }
-
-            OnInteractPerformed?.Invoke();
-        }
-        
     }
 }

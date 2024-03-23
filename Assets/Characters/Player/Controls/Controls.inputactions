@@ -22,15 +22,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Interact",
-                    "type": "Button",
-                    "id": "a97dce51-b4be-419a-9f59-d449fd9f2165",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -119,17 +110,6 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8e89941c-bd9c-4b3f-a779-3580364ba232",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard and mouse",
-                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
