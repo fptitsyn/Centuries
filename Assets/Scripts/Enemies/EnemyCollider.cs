@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Enemies
@@ -8,20 +6,19 @@ namespace Enemies
     {
         private const string WEAPON_TAG = "Weapon";
 
-        [SerializeField] private Rigidbody rigidbody;
+        [SerializeField] private Rigidbody _rigidbody;
 
         [SerializeField] private float force;
 
-        private void OnTriggerEnter(Collider collider)
+        private void OnTriggerEnter(Collider otherCollider)
         {
-            if (!collider.CompareTag(WEAPON_TAG))
+            if (!otherCollider.CompareTag(WEAPON_TAG))
             {
                 return;
             }
 
-            rigidbody.isKinematic = false;
-            rigidbody.AddForce(Vector3.up * force);
+            _rigidbody.isKinematic = false;
+            _rigidbody.AddForce(Vector3.up * force);
         }
     }
 }
-
