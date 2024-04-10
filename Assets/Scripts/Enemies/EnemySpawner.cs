@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Enemies
@@ -17,13 +15,13 @@ namespace Enemies
 
         [SerializeField] private float height;
 
-        private float currentSpawnTimer;
+        private float _currentSpawnTimer;
 
         private void Update()
         {
-            currentSpawnTimer += Time.deltaTime;
+            _currentSpawnTimer += Time.deltaTime;
 
-            if (currentSpawnTimer >= spawnInterval)
+            if (_currentSpawnTimer >= spawnInterval)
             {
                 var enemyInstance = Instantiate(enemyPrefab);
 
@@ -31,7 +29,7 @@ namespace Enemies
 
                 enemyInstance.transform.position = newPosition;
 
-                currentSpawnTimer = 0;
+                _currentSpawnTimer = 0;
             }
         }
 

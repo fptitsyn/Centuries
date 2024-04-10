@@ -1,5 +1,4 @@
 using Pathfinding;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Enemies
@@ -20,31 +19,31 @@ namespace Enemies
 
         [SerializeField] private AIDestinationSetter aiDestinationSetter;
 
-        private Player player;
+        Player _player;
 
-        private EnemyState currentState;
+        private EnemyState _currentState;
 
-        private Vector3 roamPostition;
+        private Vector3 _roamPosition;
 
         private void Start()
         {
-            player = FindObjectOfType<Player>();
+            _player = FindObjectOfType<Player>();
 
-            currentState = EnemyState.Roaming;
+            _currentState = EnemyState.Roaming;
 
-            roamPostition = GenerateRoamPosition();
+            _roamPosition = GenerateRoamPosition();
         }
 
         private void Update()
         {
-            switch (currentState)
+            switch (_currentState)
             {
                 case EnemyState.Roaming:
-                    roamTarget.transform.position = roamPostition;
+                    roamTarget.transform.position = _roamPosition;
 
-                    if (Vector3.Distance(gameObject.transform.position, roamPostition) <= reachedPointDistance)
+                    if (Vector3.Distance(gameObject.transform.position, _roamPosition) <= reachedPointDistance)
                     {
-                        roamPostition = GenerateRoamPosition();
+                        _roamPosition = GenerateRoamPosition();
                     }
 
                     aiDestinationSetter.target = roamTarget.transform;
@@ -54,16 +53,16 @@ namespace Enemies
                     break;
 
                 case EnemyState.Following:
-                    aiDestinationSetter.target = player.transform;
+                    aiDestinationSetter.target = _player.transform;
 
-                    if (Vector3.Distance(gameObject.transform.position, player.transform.position) < enemyAttack.AttackRange)
+                    if (Vector3.Distance(gameObject.transform.position, _player.transform.position) < enemyAttack.AttackRange)
                     {
                         enemyAttack.TryAttackingPlayer();
                     }
 
-                    if (Vector3.Distance(gameObject.transform.position, player.transform.position) >= stopTargetFollowingRange)
+                    if (Vector3.Distance(gameObject.transform.position, _player.transform.position) >= stopTargetFollowingRange)
                     {
-                        currentState = EnemyState.Roaming;
+                        _currentState = EnemyState.Roaming;
                     }
 
                     break;
@@ -72,9 +71,9 @@ namespace Enemies
 
         private void TryFindingPlayer()
         {
-            if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= targetFollowRange)
+            if (Vector3.Distance(gameObject.transform.position, _player.transform.position) <= targetFollowRange)
             {
-                currentState = EnemyState.Following;
+                _currentState = EnemyState.Following;
             }
         }
 
