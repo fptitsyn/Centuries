@@ -6,15 +6,6 @@
             "id": "5acb6c9c-320c-40a0-953d-531e72ecc0d1",
             "actions": [
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "d07da5bf-e7fd-420c-bdc8-d29551d2f2c1",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Move",
                     "type": "Value",
                     "id": "5cada4bd-41d8-462e-9840-35c4c9b83199",
@@ -31,40 +22,9 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Interact",
-                    "type": "Button",
-                    "id": "a97dce51-b4be-419a-9f59-d449fd9f2165",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "83024c04-2710-4c71-97a1-12cd9e6121f0",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard and mouse",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "34b40222-7354-4166-a02c-d6d1fe24cf0c",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "07aed87b-0797-41ab-bc24-7e1d2988496b",
@@ -150,17 +110,6 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8e89941c-bd9c-4b3f-a779-3580364ba232",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard and mouse",
-                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
