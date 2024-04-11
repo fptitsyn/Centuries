@@ -3704,6 +3704,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paladin WProp J Nordstrom
       objectReference: {fileID: 0}
+    - target: {fileID: 7427826130833805971, guid: 0f7e540f97a897c43bd0a50f7a044ec3, type: 3}
+      propertyPath: runningSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7427826130833805971, guid: 0f7e540f97a897c43bd0a50f7a044ec3, type: 3}
+      propertyPath: walkingSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7897492048628244963, guid: 0f7e540f97a897c43bd0a50f7a044ec3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

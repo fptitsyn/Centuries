@@ -8,6 +8,9 @@ namespace Enemies
         [SerializeField] private float minWalkableDistance;
         [SerializeField] private float maxWalkableDistance;
 
+        [SerializeField] private float walkingSpeed;
+        [SerializeField] private float runningSpeed;
+
         [SerializeField] private float reachedPointDistance;
 
         [SerializeField] private GameObject roamTarget;
@@ -57,7 +60,7 @@ namespace Enemies
                     enemyAnimator.IsWalking(true);
                     enemyAnimator.IsRunning(false);
 
-                    aiPath.maxSpeed = 2;
+                    aiPath.maxSpeed = walkingSpeed;
 
                     break;
 
@@ -67,17 +70,20 @@ namespace Enemies
                     enemyAnimator.IsWalking(false);
                     enemyAnimator.IsRunning(true);
 
-                    aiPath.maxSpeed = 5;
+                    aiPath.maxSpeed = runningSpeed;
 
                     if (Vector3.Distance(gameObject.transform.position, _player.transform.position) < enemyAttack.AttackRange)
                     {
+                        enemyAnimator.IsWalking(false);
+                        enemyAnimator.IsRunning(false);
+
                         if (enemyAttack.CanAttack)
                         {
                             enemyAttack.TryAttackingPlayer();
 
                             enemyAnimator.PlayAttack();
                         }                      
-                    }
+                    }                 
 
                     if (Vector3.Distance(gameObject.transform.position, _player.transform.position) >= stopTargetFollowingRange)
                     {
