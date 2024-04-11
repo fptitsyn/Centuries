@@ -19,6 +19,10 @@ namespace Enemies
 
         [SerializeField] private AIDestinationSetter aiDestinationSetter;
 
+        [SerializeField] private EnemyAnimator enemyAnimator;
+
+        [SerializeField] private AIPath aiPath;
+
         Player _player;
 
         private EnemyState _currentState;
@@ -50,14 +54,29 @@ namespace Enemies
 
                     TryFindingPlayer();
 
+                    enemyAnimator.IsWalking(true);
+                    enemyAnimator.IsRunning(false);
+
+                    aiPath.maxSpeed = 2;
+
                     break;
 
                 case EnemyState.Following:
                     aiDestinationSetter.target = _player.transform;
 
+                    enemyAnimator.IsWalking(false);
+                    enemyAnimator.IsRunning(true);
+
+                    aiPath.maxSpeed = 5;
+
                     if (Vector3.Distance(gameObject.transform.position, _player.transform.position) < enemyAttack.AttackRange)
                     {
-                        enemyAttack.TryAttackingPlayer();
+                        if (enemyAttack.CanAttack)
+                        {
+                            enemyAttack.TryAttackingPlayer();
+
+                            enemyAnimator.PlayAttack();
+                        }                      
                     }
 
                     if (Vector3.Distance(gameObject.transform.position, _player.transform.position) >= stopTargetFollowingRange)
