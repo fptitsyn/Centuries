@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.656
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5498011, g: 0.73158985, b: 0.7341483, a: 0.656}
+  m_IndirectSpecularColor: {r: 0.54980135, g: 0.7315896, b: 0.73414886, a: 0.656}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3145,6 +3145,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 46623917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1932999051
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2515989075406976534, guid: e174d6a4355e3814ea939bd65e605d63, type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882685743973047793, guid: e174d6a4355e3814ea939bd65e605d63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.7800617
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882685743973047793, guid: e174d6a4355e3814ea939bd65e605d63, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0000064373016
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882685743973047793, guid: e174d6a4355e3814ea939bd65e605d63, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.14981
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882685743973047793, guid: e174d6a4355e3814ea939bd65e605d63, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882685743973047793, guid: e174d6a4355e3814ea939bd65e605d63, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882685743973047793, guid: e174d6a4355e3814ea939bd65e605d63, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882685743973047793, guid: e174d6a4355e3814ea939bd65e605d63, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882685743973047793, guid: e174d6a4355e3814ea939bd65e605d63, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882685743973047793, guid: e174d6a4355e3814ea939bd65e605d63, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882685743973047793, guid: e174d6a4355e3814ea939bd65e605d63, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6948905236423899274, guid: e174d6a4355e3814ea939bd65e605d63, type: 3}
+      propertyPath: runningSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6948905236423899274, guid: e174d6a4355e3814ea939bd65e605d63, type: 3}
+      propertyPath: walkingSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e174d6a4355e3814ea939bd65e605d63, type: 3}
 --- !u!1 &1941960598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3704,13 +3769,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paladin WProp J Nordstrom
       objectReference: {fileID: 0}
+    - target: {fileID: 7409080546196011865, guid: 0f7e540f97a897c43bd0a50f7a044ec3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7427826130833805971, guid: 0f7e540f97a897c43bd0a50f7a044ec3, type: 3}
       propertyPath: runningSpeed
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7427826130833805971, guid: 0f7e540f97a897c43bd0a50f7a044ec3, type: 3}
       propertyPath: walkingSpeed
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7897492048628244963, guid: 0f7e540f97a897c43bd0a50f7a044ec3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3891,3 +3960,4 @@ SceneRoots:
   - {fileID: 2142432728}
   - {fileID: 219792541}
   - {fileID: 1257078758564213441}
+  - {fileID: 1932999051}
