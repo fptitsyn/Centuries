@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace Enemies
@@ -6,17 +5,14 @@ namespace Enemies
     public class EnemyAttack : MonoBehaviour
     {
         [SerializeField] private float attackRange;
-
         [SerializeField] private float attackDamage;
-
         [SerializeField] private float attackCooldown;
 
         private float _timer;
 
-        public bool CanAttack { get; private set; }       
-
         private Player _player;
-
+        
+        public bool CanAttack { get; private set; } = true; 
         public float AttackRange => attackRange;
 
         private void Start()

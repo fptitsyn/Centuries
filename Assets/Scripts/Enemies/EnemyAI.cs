@@ -26,7 +26,7 @@ namespace Enemies
 
         [SerializeField] private AIPath aiPath;
 
-        Player _player;
+        private Player _player;
 
         private EnemyState _currentState;
 
