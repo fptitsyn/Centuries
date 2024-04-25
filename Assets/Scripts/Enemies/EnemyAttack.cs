@@ -11,7 +11,7 @@ namespace Enemies
         private float _timer;
 
         private Player _player;
-        
+
         public bool CanAttack { get; private set; } = true; 
         public float AttackRange => attackRange;
 

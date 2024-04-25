@@ -1,4 +1,5 @@
 using Pathfinding;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Enemies
@@ -79,9 +80,9 @@ namespace Enemies
 
                         if (enemyAttack.CanAttack)
                         {
-                            enemyAttack.TryAttackingPlayer();
-
-                            enemyAnimator.PlayAttack();
+                            enemyAnimator.LaunchAttack();
+                            Debug.Log(enemyAttack.CanAttack);
+                            Debug.Log("1");
                         }                      
                     }                 
 
@@ -121,6 +122,16 @@ namespace Enemies
             var newDirection = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
 
             return newDirection.normalized;
+        }
+
+        public void StopMovement()
+        {
+            aiPath.canMove = false;
+        }
+
+        public void StartMovement()
+        {
+            aiPath.canMove = true;
         }
     }
 

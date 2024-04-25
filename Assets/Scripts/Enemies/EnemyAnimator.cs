@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Enemies
@@ -10,7 +11,7 @@ namespace Enemies
         private static readonly int Run = Animator.StringToHash("IsRunning");
         private static readonly int Walk = Animator.StringToHash("IsWalking");
 
-        public void PlayAttack()
+        public void LaunchAttack()
         {
             _animator.SetTrigger(Attack);
         }

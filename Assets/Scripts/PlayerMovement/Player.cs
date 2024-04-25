@@ -12,13 +12,16 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (health - damage <= 0f)
+        if (health - damage > 0f)
         {
+            health -= damage;
+        }
+        else
+        {
+            health = 0;
             Debug.Log("Died");
-            return;
         }
 
-        health -= damage;
         hpText.text = health.ToString(CultureInfo.InvariantCulture);
     }
 }
