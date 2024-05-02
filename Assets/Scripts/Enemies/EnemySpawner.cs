@@ -4,6 +4,8 @@ namespace Enemies
 {
     public class EnemySpawner : MonoBehaviour
     {
+        public int count;
+
         [SerializeField] private GameObject enemyPrefab;
 
         [SerializeField] private float spawnInterval;
@@ -15,7 +17,24 @@ namespace Enemies
 
         [SerializeField] private float height;
 
+        [SerializeField] private int maxCount;
+
         private float _currentSpawnTimer;
+
+        public static EnemySpawner Instance;
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                DontDestroyOnLoad(gameObject);
+                Instance = this;           
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
 
         private void Update()
         {
@@ -23,13 +42,17 @@ namespace Enemies
 
             if (_currentSpawnTimer >= spawnInterval)
             {
-                var enemyInstance = Instantiate(enemyPrefab);
+                if (count < maxCount)
+                {
+                    var enemyInstance = Instantiate(enemyPrefab);
 
-                var newPosition = GenerateStartPosition();
+                    var newPosition = GenerateStartPosition();
 
-                enemyInstance.transform.position = newPosition;
+                    enemyInstance.transform.position = newPosition;
 
-                _currentSpawnTimer = 0;
+                    _currentSpawnTimer = 0;
+                    count++;
+                }              
             }
         }
 
