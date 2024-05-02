@@ -6,6 +6,8 @@ namespace Enemies
 {
     public class EnemyAI : MonoBehaviour
     {
+        public int health;
+
         [SerializeField] private float minWalkableDistance;
         [SerializeField] private float maxWalkableDistance;
 
@@ -81,8 +83,8 @@ namespace Enemies
                         if (enemyAttack.CanAttack)
                         {
                             enemyAnimator.LaunchAttack();
-                            Debug.Log(enemyAttack.CanAttack);
-                            Debug.Log("1");
+                            //Debug.Log(enemyAttack.CanAttack);
+                            //Debug.Log("1");
                         }                      
                     }                 
 
