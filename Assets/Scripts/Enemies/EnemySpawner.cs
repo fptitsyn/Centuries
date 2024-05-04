@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Enemies
 {
     public class EnemySpawner : MonoBehaviour
     {
+        public int count;
+
         [SerializeField] private GameObject enemyPrefab;
 
         [SerializeField] private float spawnInterval;
@@ -17,21 +17,34 @@ namespace Enemies
 
         [SerializeField] private float height;
 
-        private float currentSpawnTimer;
+        public int maxCount;
+
+        private float _currentSpawnTimer;
+
+        public static EnemySpawner Instance;
+
+        private void Awake()
+        {
+            Instance = this;
+        }
 
         private void Update()
         {
-            currentSpawnTimer += Time.deltaTime;
+            _currentSpawnTimer += Time.deltaTime;
 
-            if (currentSpawnTimer >= spawnInterval)
+            if (_currentSpawnTimer >= spawnInterval)
             {
-                var enemyInstance = Instantiate(enemyPrefab);
+                if (count < maxCount)
+                {
+                    var enemyInstance = Instantiate(enemyPrefab);
 
-                var newPosition = GenerateStartPosition();
+                    var newPosition = GenerateStartPosition();
 
-                enemyInstance.transform.position = newPosition;
+                    enemyInstance.transform.position = newPosition;
 
-                currentSpawnTimer = 0;
+                    _currentSpawnTimer = 0;
+                    count++;
+                }              
             }
         }
 

@@ -6,8 +6,13 @@ namespace Enemies
 {
     public class EnemyAI : MonoBehaviour
     {
+        public int health;
+
         [SerializeField] private float minWalkableDistance;
         [SerializeField] private float maxWalkableDistance;
+
+        [SerializeField] private float walkingSpeed;
+        [SerializeField] private float runningSpeed;
 
         [SerializeField] private float reachedPointDistance;
 
@@ -20,50 +25,72 @@ namespace Enemies
 
         [SerializeField] private AIDestinationSetter aiDestinationSetter;
 
-        private Player player;
+        [SerializeField] private EnemyAnimator enemyAnimator;
 
-        private EnemyState currentState;
+        [SerializeField] private AIPath aiPath;
 
-        private Vector3 roamPostition;
+        private Player _player;
+
+        private EnemyState _currentState;
+
+        private Vector3 _roamPosition;
 
         private void Start()
         {
-            player = FindObjectOfType<Player>();
+            _player = FindObjectOfType<Player>();
 
-            currentState = EnemyState.Roaming;
+            _currentState = EnemyState.Roaming;
 
-            roamPostition = GenerateRoamPosition();
+            _roamPosition = GenerateRoamPosition();
         }
 
         private void Update()
         {
-            switch (currentState)
+            switch (_currentState)
             {
                 case EnemyState.Roaming:
-                    roamTarget.transform.position = roamPostition;
+                    roamTarget.transform.position = _roamPosition;
 
-                    if (Vector3.Distance(gameObject.transform.position, roamPostition) <= reachedPointDistance)
+                    if (Vector3.Distance(gameObject.transform.position, _roamPosition) <= reachedPointDistance)
                     {
-                        roamPostition = GenerateRoamPosition();
+                        _roamPosition = GenerateRoamPosition();
                     }
 
                     aiDestinationSetter.target = roamTarget.transform;
 
                     TryFindingPlayer();
 
+                    enemyAnimator.IsWalking(true);
+                    enemyAnimator.IsRunning(false);
+
+                    aiPath.maxSpeed = walkingSpeed;
+
                     break;
 
                 case EnemyState.Following:
-                    aiDestinationSetter.target = player.transform;
+                    aiDestinationSetter.target = _player.transform;
 
-                    if (Vector3.Distance(gameObject.transform.position, player.transform.position) < enemyAttack.AttackRange)
-                    {
-                        enemyAttack.TryAttackingPlayer();
-                    }
+                    enemyAnimator.IsWalking(false);
+                    enemyAnimator.IsRunning(true);
 
-                    if (Vector3.Distance(gameObject.transform.position, player.transform.position) >= stopTargetFollowingRange)
+                    aiPath.maxSpeed = runningSpeed;
+
+                    if (Vector3.Distance(gameObject.transform.position, _player.transform.position) < enemyAttack.AttackRange)
                     {
-                        currentState = EnemyState.Roaming;
+                        enemyAnimator.IsWalking(false);
+                        enemyAnimator.IsRunning(false);
+
+                        if (enemyAttack.CanAttack)
+                        {
+                            enemyAnimator.LaunchAttack();
+                            //Debug.Log(enemyAttack.CanAttack);
+                            //Debug.Log("1");
+                        }                      
+                    }                 
+
+                    if (Vector3.Distance(gameObject.transform.position, _player.transform.position) >= stopTargetFollowingRange)
+                    {
+                        _currentState = EnemyState.Roaming;
                     }
 
                     break;
@@ -72,9 +99,9 @@ namespace Enemies
 
         private void TryFindingPlayer()
         {
-            if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= targetFollowRange)
+            if (Vector3.Distance(gameObject.transform.position, _player.transform.position) <= targetFollowRange)
             {
-                currentState = EnemyState.Following;
+                _currentState = EnemyState.Following;
             }
         }
 
@@ -97,6 +124,16 @@ namespace Enemies
             var newDirection = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
 
             return newDirection.normalized;
+        }
+
+        public void StopMovement()
+        {
+            aiPath.canMove = false;
+        }
+
+        public void StartMovement()
+        {
+            aiPath.canMove = true;
         }
     }
 

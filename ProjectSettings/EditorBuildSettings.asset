@@ -14,9 +14,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI/PlayMenuScene.unity
     guid: 4ebd5141e489ac34d939c5ff15c1a83c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameScene.unity
     guid: 20d2b54209139a54f9f902a9db893e6a
+  - enabled: 1
+    path: Assets/Scenes/GameScene 1.unity
+    guid: e88db4f7ebb01d74786394b993387008
+  - enabled: 1
+    path: Assets/Scenes/UI/DefeatMenu.unity
+    guid: 3a75352f6097b574084841c534cc396e
+  - enabled: 1
+    path: Assets/Scenes/UI/VictoryMenu.unity
+    guid: ef64ceba6ecac5c44848c3edd65f1700
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 47b484414fa60614693eccfc83d7a31f, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 3d350cff7cd91e046981682125c17042, type: 2}
