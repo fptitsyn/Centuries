@@ -17,7 +17,7 @@ namespace Enemies
 
         [SerializeField] private float height;
 
-        [SerializeField] private int maxCount;
+        public int maxCount;
 
         private float _currentSpawnTimer;
 
@@ -25,15 +25,7 @@ namespace Enemies
 
         private void Awake()
         {
-            if (Instance == null)
-            {
-                DontDestroyOnLoad(gameObject);
-                Instance = this;           
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+            Instance = this;
         }
 
         private void Update()

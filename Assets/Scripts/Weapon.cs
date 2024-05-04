@@ -9,26 +9,30 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy")) 
+        GameObject hit = other.gameObject;
+        if (hit.CompareTag("Enemy"))
         {
-            if (other.gameObject.GetComponent<EnemyAI>().health - damage <= 0)
+            GameObject enemy = hit.transform.parent.gameObject;
+            Debug.Log("enemy");
+            if (enemy.GetComponent<EnemyAI>().health - damage <= 0)
             {
-                other.gameObject.GetComponent<EnemyAI>().health = 0;
-                Destroy(other.gameObject.transform.parent.gameObject);
+                enemy.GetComponent<EnemyAI>().health = 0;
+                Destroy(enemy);
                 EnemySpawner.Instance.count--;
-                if (EnemySpawner.Instance.count == 0)
+                EnemySpawner.Instance.maxCount--;
+                if (EnemySpawner.Instance.maxCount == 0)
                 {
                     SceneManager.LoadScene(4);
                 }
             }
             else
             {
-                other.gameObject.GetComponent<EnemyAI>().health -= damage;
+                enemy.GetComponent<EnemyAI>().health -= damage;
             }
         }
-        else if (other.gameObject.CompareTag("Weapon"))
+        else if (hit.CompareTag("Weapon"))
         {
-            if (canBlock || other.gameObject.GetComponent<Weapon>().canBlock)
+            if (canBlock || hit.GetComponent<Weapon>().canBlock)
             {
                 Debug.Log("Block");
             }

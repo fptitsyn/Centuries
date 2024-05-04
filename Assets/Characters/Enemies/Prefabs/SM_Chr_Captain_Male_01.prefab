@@ -2931,7 +2931,6 @@ GameObject:
   - component: {fileID: 8810202876635041728}
   - component: {fileID: 2452439495080548679}
   - component: {fileID: 6862675097665889773}
-  - component: {fileID: 6805618168670379466}
   m_Layer: 7
   m_Name: SM_Chr_Captain_Male_01
   m_TagString: Enemy
@@ -3079,31 +3078,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1560196492443326136, guid: 4fa1e5bccd88a88459452767852ce80b, type: 3}
---- !u!114 &6805618168670379466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8805807030813947016}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f3d3cd93f682eb49a0b7277479b9f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 20
-  minWalkableDistance: 2
-  maxWalkableDistance: 10
-  walkingSpeed: 2
-  runningSpeed: 3
-  reachedPointDistance: 2
-  roamTarget: {fileID: 8199232059694874270}
-  targetFollowRange: 7
-  stopTargetFollowingRange: 15
-  enemyAttack: {fileID: 8780638971876296913}
-  aiDestinationSetter: {fileID: 5845334977925018115}
-  enemyAnimator: {fileID: 8422820588582665753}
-  aiPath: {fileID: 2450183354468651118}
 --- !u!1 &8836264134606365033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,10 +3094,9 @@ GameObject:
   - component: {fileID: 5845334977925018115}
   - component: {fileID: 8422820588582665753}
   - component: {fileID: 2450183354468651118}
-  - component: {fileID: 7061916192186696336}
   m_Layer: 7
   m_Name: SM_Chr_Captain_Male_01
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3314,28 +3287,6 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
---- !u!64 &7061916192186696336
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8836264134606365033}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1560196492443326136, guid: 4fa1e5bccd88a88459452767852ce80b, type: 3}
 --- !u!1 &9008955750449370110
 GameObject:
   m_ObjectHideFlags: 0
