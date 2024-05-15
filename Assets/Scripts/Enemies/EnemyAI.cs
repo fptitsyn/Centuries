@@ -83,6 +83,7 @@ namespace Enemies
                         if (enemyAttack.CanAttack)
                         {
                             enemyAnimator.LaunchAttack();
+                            enemyAttack.CanAttack = false;
                             //Debug.Log(enemyAttack.CanAttack);
                             //Debug.Log("1");
                         }                      
@@ -130,7 +131,7 @@ namespace Enemies
         {
             aiPath.canMove = false;
         }
-
+        
         public void StartMovement()
         {
             aiPath.canMove = true;

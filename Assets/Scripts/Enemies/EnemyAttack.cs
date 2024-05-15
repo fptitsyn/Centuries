@@ -12,7 +12,7 @@ namespace Enemies
 
         private Player _player;
 
-        public bool CanAttack { get; private set; } = true; 
+        public bool CanAttack = true; 
         public float AttackRange => attackRange;
 
         private void Start()
@@ -44,9 +44,9 @@ namespace Enemies
             _timer = 0f;
         }
 
-        public void TryAttackingPlayer()
+        public void TryAttackingPlayer(int attackDamage)
         {
-            _player.TakeDamage(attackDamage);
+            // _player.TakeDamage(attackDamage);
 
             CanAttack = false;
         }
