@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 1324d04cdd7fabf42b9771d47f2cd998, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -158,7 +158,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -30, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &198122312
 MonoBehaviour:
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6bd1ba66b165f9147909f6e19526daeb, type: 2}
   m_sharedMaterial: {fileID: -8017069309082465973, guid: 6bd1ba66b165f9147909f6e19526daeb, type: 2}
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -269,7 +269,8 @@ GameObject:
   - component: {fileID: 329243949}
   - component: {fileID: 329243948}
   - component: {fileID: 329243947}
-  - component: {fileID: 329243951}
+  - component: {fileID: 329243952}
+  - component: {fileID: 329243953}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -364,7 +365,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &329243951
+--- !u!114 &329243952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -374,6 +375,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0707e8ab8277674a876b85e0b677720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 715334675}
+  - {fileID: 785970531}
+  - {fileID: 1899027295}
+--- !u!114 &329243953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329243946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccee62120f134354ead173ef13a2bdaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &424553144
@@ -723,14 +740,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 329243953}
         m_TargetAssemblyTypeName: UI.SceneLoader, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: MainMenuScene
           m_BoolArgument: 0
@@ -773,6 +790,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610615517}
   m_CullTransparentMesh: 1
+--- !u!1 &612749382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 612749384}
+  - component: {fileID: 612749383}
+  m_Layer: 0
+  m_Name: BattleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &612749383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612749382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38cb43300dd61ef4991d6eb6f546e2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toBattleButton: {fileID: 610615519}
+--- !u!4 &612749384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612749382}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &664431101
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,14 +918,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 329243953}
         m_TargetAssemblyTypeName: UI.SceneLoader, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: MainMenuScene
           m_BoolArgument: 0
@@ -918,6 +980,7 @@ GameObject:
   - component: {fileID: 715334674}
   - component: {fileID: 715334673}
   - component: {fileID: 715334672}
+  - component: {fileID: 715334675}
   m_Layer: 5
   m_Name: Button1
   m_TagString: Untagged
@@ -969,7 +1032,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -988,7 +1051,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 715334673}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 612749383}
+        m_TargetAssemblyTypeName: UI.BattleData, Assembly-CSharp
+        m_MethodName: BattleChosen
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 715334675}
+          m_ObjectArgumentAssemblyTypeName: UI.BattleButton, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &715334673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1027,6 +1102,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715334670}
   m_CullTransparentMesh: 1
+--- !u!114 &715334675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715334670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7307f0d886e8641b9141720aea2add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 1572789994}
 --- !u!1 &785970526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1127,7 @@ GameObject:
   - component: {fileID: 785970530}
   - component: {fileID: 785970529}
   - component: {fileID: 785970528}
+  - component: {fileID: 785970531}
   m_Layer: 5
   m_Name: Button2
   m_TagString: Untagged
@@ -1090,7 +1179,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1109,7 +1198,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 785970529}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 612749383}
+        m_TargetAssemblyTypeName: UI.BattleData, Assembly-CSharp
+        m_MethodName: BattleChosen
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 785970531}
+          m_ObjectArgumentAssemblyTypeName: UI.BattleButton, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &785970529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1148,6 +1249,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785970526}
   m_CullTransparentMesh: 1
+--- !u!114 &785970531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785970526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7307f0d886e8641b9141720aea2add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 2073850362}
 --- !u!1 &1177285146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,7 +1431,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -30, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1572789994
 MonoBehaviour:
@@ -1339,7 +1453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6bd1ba66b165f9147909f6e19526daeb, type: 2}
   m_sharedMaterial: {fileID: -8017069309082465973, guid: 6bd1ba66b165f9147909f6e19526daeb, type: 2}
@@ -1366,7 +1480,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1428,6 +1542,7 @@ GameObject:
   - component: {fileID: 1899027294}
   - component: {fileID: 1899027293}
   - component: {fileID: 1899027292}
+  - component: {fileID: 1899027295}
   m_Layer: 5
   m_Name: Button3
   m_TagString: Untagged
@@ -1479,7 +1594,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1498,7 +1613,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1899027293}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 612749383}
+        m_TargetAssemblyTypeName: UI.BattleData, Assembly-CSharp
+        m_MethodName: BattleChosen
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1899027295}
+          m_ObjectArgumentAssemblyTypeName: UI.BattleButton, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1899027293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1537,6 +1664,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899027290}
   m_CullTransparentMesh: 1
+--- !u!114 &1899027295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899027290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7307f0d886e8641b9141720aea2add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 198122312}
 --- !u!1 &2054476657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,7 +1846,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -30, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2073850362
 MonoBehaviour:
@@ -1728,7 +1868,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6bd1ba66b165f9147909f6e19526daeb, type: 2}
   m_sharedMaterial: {fileID: -8017069309082465973, guid: 6bd1ba66b165f9147909f6e19526daeb, type: 2}
@@ -1755,7 +1895,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1813,3 +1953,4 @@ SceneRoots:
   - {fileID: 587431812}
   - {fileID: 329243950}
   - {fileID: 505226236}
+  - {fileID: 612749384}

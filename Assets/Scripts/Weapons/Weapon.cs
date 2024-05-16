@@ -24,7 +24,7 @@ namespace Weapons
                     EnemySpawner.Instance.maxCount--;
                     if (EnemySpawner.Instance.maxCount == 0)
                     {
-                        SceneManager.LoadScene(4);
+                        SceneManager.LoadScene(5);
                     }
                 }
                 else

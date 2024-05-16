@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 3ce0411222c9813408db32125e51cf57, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -14138,6 +14138,22 @@ PrefabInstance:
       value: Arena
       objectReference: {fileID: 0}
     - target: {fileID: 3243558149730544931, guid: e256f118800841c4ca8a4e71c82c9823, type: 3}
+      propertyPath: maxX
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243558149730544931, guid: e256f118800841c4ca8a4e71c82c9823, type: 3}
+      propertyPath: maxY
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243558149730544931, guid: e256f118800841c4ca8a4e71c82c9823, type: 3}
+      propertyPath: minX
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243558149730544931, guid: e256f118800841c4ca8a4e71c82c9823, type: 3}
+      propertyPath: minY
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243558149730544931, guid: e256f118800841c4ca8a4e71c82c9823, type: 3}
       propertyPath: maxCount
       value: 5
       objectReference: {fileID: 0}
@@ -14145,6 +14161,10 @@ PrefabInstance:
       propertyPath: enemyPrefab
       value: 
       objectReference: {fileID: 8836264134606365033, guid: 0b6a321a8eaafe84aba9338ef563b426, type: 3}
+    - target: {fileID: 3243558149730544931, guid: e256f118800841c4ca8a4e71c82c9823, type: 3}
+      propertyPath: spawnInterval
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5006029064434189999, guid: e256f118800841c4ca8a4e71c82c9823, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

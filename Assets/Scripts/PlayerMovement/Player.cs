@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
         else
         {
             health = 0;
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(6);
         }
 
         hpText.text = health.ToString(CultureInfo.InvariantCulture);

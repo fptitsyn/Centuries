@@ -1,4 +1,7 @@
+using System;
+using UI;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Enemies
 {
@@ -26,6 +29,11 @@ namespace Enemies
         private void Awake()
         {
             Instance = this;
+        }
+
+        private void Start()
+        {
+            maxCount = BattleManager.Instance.BattleData.EnemyAmount;
         }
 
         private void Update()
