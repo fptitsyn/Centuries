@@ -22,7 +22,7 @@ namespace UI
             
             foreach (BattleButton button in buttons)
             {
-                _enemyAmount = Random.Range(Math.Max(_level - 2, 1), _level + 2);
+                _enemyAmount = Random.Range(Math.Max(_level - 2, 1), _level + 3);
                 _goldReward = Random.Range(100, 150) + _enemyAmount * 100 + _level * 10;
                 _xpReward = Random.Range(300, 450) + _enemyAmount * 100 + _level * 10;
                 

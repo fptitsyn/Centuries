@@ -39,8 +39,8 @@ namespace UI
         {
             levelText.text = _level.ToString();
             _xpToLevelUp = 1000 + _level * 100;
-            xpSlider.value = _xp;
-            xpSlider.maxValue = _xpToLevelUp;
+            // xpSlider.value = _xp;
+            // xpSlider.maxValue = _xpToLevelUp;
         
             if (_xp >= _xpToLevelUp)
             {

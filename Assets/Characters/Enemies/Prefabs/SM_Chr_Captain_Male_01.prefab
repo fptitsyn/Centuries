@@ -3167,7 +3167,7 @@ MonoBehaviour:
   maxWalkableDistance: 10
   walkingSpeed: 2
   runningSpeed: 3
-  reachedPointDistance: 2
+  reachedPointDistance: 2.5
   roamTarget: {fileID: 8199232059694874270}
   targetFollowRange: 7
   stopTargetFollowingRange: 15
@@ -3190,6 +3190,7 @@ MonoBehaviour:
   attackRange: 1.5
   attackDamage: 10
   attackCooldown: 4
+  CanAttack: 1
 --- !u!114 &9077067330019667018
 MonoBehaviour:
   m_ObjectHideFlags: 0

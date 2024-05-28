@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Hands
+namespace Player.Hands
 {
     public class Input : MonoBehaviour
     {
-        private const string GRIP = "Grip";
-        private const string TRIGGER = "Trigger";
+        private const string Grip = "Grip";
+        private const string Trigger = "Trigger";
 
         [SerializeField] private Animator animator;
 
@@ -21,8 +19,8 @@ namespace Hands
             var gripValue = gripAction.action.ReadValue<float>();
             var actionValue = activateAction.action.ReadValue<float>();
 
-            animator.SetFloat(GRIP, gripValue);
-            animator.SetFloat(TRIGGER, actionValue);
+            animator.SetFloat(Grip, gripValue);
+            animator.SetFloat(Trigger, actionValue);
         }
     }
 }

@@ -69022,13 +69022,6 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.5333333
-    functionName: TryAttackingPlayer
-    data: 
-    objectReferenceParameter: {fileID: 11500000, guid: 4ab98cc63c8aec745be98507e54e1f53, type: 3}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 2.2333333
     functionName: StartMovement
     data: 

@@ -9,5 +9,11 @@ namespace UI
         {
             SceneManager.LoadScene(sceneIndex);
         }
+
+        public void ExitGame()
+        {
+            Debug.Log("Quit");
+            Application.Quit();
+        }
     }
 }

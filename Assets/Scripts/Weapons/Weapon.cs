@@ -11,15 +11,23 @@ namespace Weapons
 
         private void OnTriggerEnter(Collider other)
         {
+            if (canBlock)
+            {
+                return;
+            }
+            
             GameObject hit = other.gameObject;
             if (hit.CompareTag("Enemy"))
             {
                 GameObject enemy = hit.transform.parent.gameObject;
+                if (enemy.GetComponent<EnemyAI>().health == 0)
+                {
+                    return;
+                }
                 Debug.Log("enemy");
                 if (enemy.GetComponent<EnemyAI>().health - damage <= 0)
                 {
                     enemy.GetComponent<EnemyAI>().health = 0;
-                    Destroy(enemy);
                     EnemySpawner.Instance.count--;
                     EnemySpawner.Instance.maxCount--;
                     if (EnemySpawner.Instance.maxCount == 0)
@@ -41,7 +49,7 @@ namespace Weapons
             }
             else if (hit.CompareTag("Player"))
             {
-                Player player = hit.GetComponentInChildren<Player>();
+                Player.Player player = hit.GetComponentInChildren<Player.Player>();
                 Debug.Log("player hit");
                 player.TakeDamage(damage);
             }

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +25,11 @@ namespace UI
 
         private void Update()
         {
+            if (toBattleButton == null)
+            {
+                return;
+            }
+            
             toBattleButton.interactable = BattleData != null;
         }
 

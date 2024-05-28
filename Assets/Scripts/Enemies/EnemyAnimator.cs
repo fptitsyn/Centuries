@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 namespace Enemies
@@ -24,6 +23,12 @@ namespace Enemies
         public void IsWalking(bool condition)
         {
             _animator.SetBool(Walk, condition);
+        }
+
+        public void Die()
+        {
+            int deathTrigger = Animator.StringToHash("Death" + Random.Range(1, 4));
+            _animator.SetTrigger(deathTrigger);
         }
     }
 }

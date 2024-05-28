@@ -1,5 +1,5 @@
+using System.Collections;
 using Pathfinding;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Enemies
@@ -29,7 +29,7 @@ namespace Enemies
 
         [SerializeField] private AIPath aiPath;
 
-        private Player _player;
+        private Player.Player _player;
 
         private EnemyState _currentState;
 
@@ -37,7 +37,7 @@ namespace Enemies
 
         private void Start()
         {
-            _player = FindObjectOfType<Player>();
+            _player = FindObjectOfType<Player.Player>();
 
             _currentState = EnemyState.Roaming;
 
@@ -84,8 +84,6 @@ namespace Enemies
                         {
                             enemyAnimator.LaunchAttack();
                             enemyAttack.CanAttack = false;
-                            //Debug.Log(enemyAttack.CanAttack);
-                            //Debug.Log("1");
                         }                      
                     }                 
 
@@ -95,6 +93,11 @@ namespace Enemies
                     }
 
                     break;
+            }
+
+            if (health <= 0)
+            {
+                StartCoroutine(ActivateDeath());
             }
         }
 
@@ -135,6 +138,25 @@ namespace Enemies
         public void StartMovement()
         {
             aiPath.canMove = true;
+        }
+        
+        private IEnumerator ActivateDeath()
+        {
+            enemyAnimator.Die();
+            aiPath.enabled = false;
+            aiDestinationSetter.enabled = false;
+            enemyAttack.enabled = false;
+            
+            yield return new WaitForSeconds(2f);
+            
+            // var weapons = GetComponentsInChildren<XRGrabInteractable>();
+            // foreach (var weapon in weapons)
+            // {
+            //     weapon.enabled = true;
+            // }
+            
+            enemyAnimator.enabled = false;
+            enabled = false;
         }
     }
 
