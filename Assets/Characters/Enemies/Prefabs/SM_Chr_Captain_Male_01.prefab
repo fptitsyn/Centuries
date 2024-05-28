@@ -3188,7 +3188,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 1.5
-  attackDamage: 10
   attackCooldown: 4
   CanAttack: 1
 --- !u!114 &9077067330019667018
@@ -3366,7 +3365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4544249557234545541, guid: 0b5c4d5e1b6faf745826bb69a4306f73, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7021420225420658521, guid: 0b5c4d5e1b6faf745826bb69a4306f73, type: 3}
       propertyPath: m_Name
