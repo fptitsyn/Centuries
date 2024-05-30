@@ -1,4 +1,5 @@
 using System.Collections;
+using Audio;
 using Pathfinding;
 using UnityEngine;
 
@@ -36,6 +37,7 @@ namespace Enemies
         private Vector3 _roamPosition;
 
         public bool IsAttacking { get; private set; }
+        public bool IsDying { get; private set; }
 
         private void Start()
         {
@@ -143,21 +145,27 @@ namespace Enemies
         
         private IEnumerator ActivateDeath()
         {
-            enemyAnimator.Die();
-            aiPath.enabled = false;
-            aiDestinationSetter.enabled = false;
-            enemyAttack.enabled = false;
-            
-            yield return new WaitForSeconds(2f);
-            
-            // var weapons = GetComponentsInChildren<XRGrabInteractable>();
-            // foreach (var weapon in weapons)
-            // {
-            //     weapon.enabled = true;
-            // }
-            
-            enemyAnimator.enabled = false;
-            enabled = false;
+            if (!IsDying)
+            {
+                IsDying = true;
+                AudioManager.Instance.PlaySfx("Death " + Random.Range(1, 4));
+                enemyAnimator.Die();
+                aiPath.enabled = false;
+                aiDestinationSetter.enabled = false;
+                enemyAttack.enabled = false;
+                //var collider = GetComponentInChildren<MeshCollider>();
+                //collider.enabled = false;
+                yield return new WaitForSeconds(2f);
+
+                // var weapons = GetComponentsInChildren<XRGrabInteractable>();
+                // foreach (var weapon in weapons)
+                // {
+                //     weapon.enabled = true;
+                // }
+
+                enemyAnimator.enabled = false;
+                enabled = false;
+            }      
         }
         
         private IEnumerator Attack()

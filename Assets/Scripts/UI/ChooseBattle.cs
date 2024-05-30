@@ -15,9 +15,11 @@ namespace UI
         
         private void Start()
         {
+            BattleManager.Instance.BattleData = null;
+
             if (PlayerPrefs.HasKey(NameHelper.LevelPrefs))
             {
-                _level = PlayerPrefs.GetInt(NameHelper.LevelPrefs);
+                _level = PlayerPrefs.GetInt(NameHelper.LevelPrefs);            
             }
             
             foreach (BattleButton button in buttons)

@@ -23,7 +23,7 @@ namespace UI
                 Destroy(gameObject);
             }
         }
-
+             
         private void Update()
         {
             if (toBattleButton == null)

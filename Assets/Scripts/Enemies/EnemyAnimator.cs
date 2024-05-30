@@ -28,6 +28,7 @@ namespace Enemies
 
         public void Die()
         {
+            Debug.Log("Anim");
             int deathTrigger = Animator.StringToHash("Death" + Random.Range(1, 4));
             _animator.SetTrigger(deathTrigger);
         }

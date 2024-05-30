@@ -15,7 +15,9 @@ namespace UI
         {
             _xpReward = BattleManager.Instance.BattleData.XpReward;
             _goldReward = BattleManager.Instance.BattleData.GoldReward;
-            
+
+            BattleManager.Instance.BattleData = null;
+
             xpText.text = _xpReward.ToString();
             goldText.text = _goldReward.ToString();
         }

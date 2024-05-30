@@ -17,5 +17,10 @@ namespace UI
             Debug.Log("Quit");
             Application.Quit();
         }
+
+        public void PlayMenuMusic()
+        {
+            AudioManager.Instance.PlayMusic("Main Menu Music " + Random.Range(1, 2));
+        }
     }
 }

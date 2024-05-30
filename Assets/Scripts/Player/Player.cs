@@ -1,6 +1,8 @@
+using Audio;
 using System.Collections;
 using System.Globalization;
 using TMPro;
+using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,6 +31,9 @@ namespace Player
 
         private IEnumerator FightLost()
         {
+            BattleManager.Instance.BattleData = null;
+            AudioManager.Instance.musicSource.Stop();
+            AudioManager.Instance.PlaySfx("Defeat SFX");
             yield return new WaitForSeconds(0.5f);
             SceneManager.LoadScene(6);
         }

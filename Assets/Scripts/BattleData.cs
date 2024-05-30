@@ -1,4 +1,7 @@
-﻿public class BattleData
+﻿using System;
+
+[Serializable]
+public class BattleData
 {
     public int EnemyAmount { get; }
     public int GoldReward { get; }

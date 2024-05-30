@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7619169, g: 0.7857207, b: 0.73050916, a: 1}
+  m_IndirectSpecularColor: {r: 0.7619173, g: 0.78572065, b: 0.73050946, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -992,6 +992,18 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: e49874f19fdb7114bbf776cb9e5f53c0, type: 3}
   - name: War Cry
     audio: {fileID: 8300000, guid: 60479571c36aa754ca8d2e0c7abb3dfa, type: 3}
+  - name: Victory SFX
+    audio: {fileID: 8300000, guid: 01c9f1b6f06aa434287d3dae7ae6ee8b, type: 3}
+  - name: Defeat SFX
+    audio: {fileID: 8300000, guid: 590b2f275bf59884e918882980bb1401, type: 3}
+  - name: Sword Hit
+    audio: {fileID: 8300000, guid: 5e12da6cc4b5de346b88cb3ccca5fb4b, type: 3}
+  - name: Death 1
+    audio: {fileID: 8300000, guid: 33bdcc6176fe83b43967b041ab8b1126, type: 3}
+  - name: Death 2
+    audio: {fileID: 8300000, guid: d74cae538bb1b564b944c941f59d8896, type: 3}
+  - name: Death 3
+    audio: {fileID: 8300000, guid: eb38bce2a8ef484489e307e99c92fa03, type: 3}
 --- !u!4 &501913449
 Transform:
   m_ObjectHideFlags: 0
@@ -1194,6 +1206,10 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_Name
       value: XR Device Simulator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
