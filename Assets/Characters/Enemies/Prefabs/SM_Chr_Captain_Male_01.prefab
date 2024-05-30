@@ -2932,6 +2932,7 @@ GameObject:
   - component: {fileID: 2452439495080548679}
   - component: {fileID: 6862675097665889773}
   - component: {fileID: 6494761712510579102}
+  - component: {fileID: 7414080749226133204}
   m_Layer: 8
   m_Name: SM_Chr_Captain_Male_01
   m_TagString: Enemy
@@ -3096,11 +3097,38 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1560196492443326136, guid: 4fa1e5bccd88a88459452767852ce80b, type: 3}
+--- !u!54 &7414080749226133204
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805807030813947016}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 36
+  m_CollisionDetection: 0
 --- !u!1 &8836264134606365033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,7 +3161,7 @@ Transform:
   m_GameObject: {fileID: 8836264134606365033}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.8800836, y: -0.0000014305115, z: 3.503274}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3187,12 +3215,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   minWalkableDistance: 2
-  maxWalkableDistance: 10
+  maxWalkableDistance: 8
   walkingSpeed: 2
   runningSpeed: 3
   reachedPointDistance: 2.5
   roamTarget: {fileID: 8199232059694874270}
-  targetFollowRange: 7
+  targetFollowRange: 12
   stopTargetFollowingRange: 15
   enemyAttack: {fileID: 8780638971876296913}
   aiDestinationSetter: {fileID: 5845334977925018115}

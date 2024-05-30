@@ -1,3 +1,4 @@
+using System.Collections;
 using Enemies;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -32,7 +33,7 @@ namespace Weapons
                     EnemySpawner.Instance.maxCount--;
                     if (EnemySpawner.Instance.maxCount == 0)
                     {
-                        SceneManager.LoadScene(5);
+                        StartCoroutine(WinFight());
                     }
                 }
                 else
@@ -49,10 +50,24 @@ namespace Weapons
             }
             else if (hit.CompareTag("Player"))
             {
+                EnemyAI enemy = gameObject.GetComponentInParent<EnemyAI>();
+                if (!enemy.IsAttacking)
+                {
+                    Debug.Log("nah");
+                    return;
+                }
+                
                 Player.Player player = hit.GetComponentInChildren<Player.Player>();
                 Debug.Log("player hit");
                 player.TakeDamage(damage);
             }
+        }
+
+        private IEnumerator WinFight()
+        {
+            // TODO: Play sound
+            yield return new WaitForSeconds(3f);
+            SceneManager.LoadScene(5);
         }
     }
 }

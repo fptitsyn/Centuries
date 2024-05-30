@@ -6,13 +6,14 @@ namespace Enemies
     {
         [SerializeField] private Animator _animator;
 
-        private static readonly int Attack = Animator.StringToHash("Attack");
         private static readonly int Run = Animator.StringToHash("IsRunning");
         private static readonly int Walk = Animator.StringToHash("IsWalking");
 
         public void LaunchAttack()
         {
-            _animator.SetTrigger(Attack);
+            // int attackTrigger = Animator.StringToHash("Attack1");
+            int attackTrigger = Animator.StringToHash("Attack" + Random.Range(1, 5));
+            _animator.SetTrigger(attackTrigger);
         }
 
         public void IsRunning(bool condition)

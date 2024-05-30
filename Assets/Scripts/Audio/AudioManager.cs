@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Audio
 {
@@ -27,10 +29,15 @@ namespace Audio
             }
         }
 
+        private void Start()
+        {
+            PlayMusic("Main Menu Music " + Random.Range(1, 3));
+        }
+
         public void PlayMusic(string soundName)
         {
             Sound s = music.Find(x => x.name == soundName);
-
+            
             if (s != null)
             {
                 musicSource.clip = s.audio;

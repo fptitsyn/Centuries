@@ -334,6 +334,7 @@ GameObject:
   - component: {fileID: 329243952}
   - component: {fileID: 329243953}
   - component: {fileID: 329243954}
+  - component: {fileID: 329243955}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -475,6 +476,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+--- !u!114 &329243955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329243946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213910aaa1fc6a74e9c14a27e1245aa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &505226233
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,10 +783,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 329243953}
-        m_TargetAssemblyTypeName: UI.SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+      - m_Target: {fileID: 329243955}
+        m_TargetAssemblyTypeName: ToBattle, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

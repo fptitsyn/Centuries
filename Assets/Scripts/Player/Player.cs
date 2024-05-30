@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
@@ -20,10 +21,16 @@ namespace Player
             else
             {
                 health = 0;
-                SceneManager.LoadScene(6);
+                StartCoroutine(FightLost());
             }
 
             hpText.text = health.ToString(CultureInfo.InvariantCulture);
+        }
+
+        private IEnumerator FightLost()
+        {
+            yield return new WaitForSeconds(0.5f);
+            SceneManager.LoadScene(6);
         }
     }
 }

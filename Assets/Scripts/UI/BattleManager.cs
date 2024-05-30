@@ -1,3 +1,4 @@
+using Audio;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,6 +36,7 @@ namespace UI
 
         public void BattleChosen(BattleButton button)
         {
+            AudioManager.Instance.PlaySfx("Choose Battle");
             BattleData = button.BattleData;
         }
     }

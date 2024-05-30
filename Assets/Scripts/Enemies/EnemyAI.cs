@@ -35,6 +35,8 @@ namespace Enemies
 
         private Vector3 _roamPosition;
 
+        public bool IsAttacking { get; private set; }
+
         private void Start()
         {
             _player = FindObjectOfType<Player.Player>();
@@ -82,8 +84,7 @@ namespace Enemies
 
                         if (enemyAttack.CanAttack)
                         {
-                            enemyAnimator.LaunchAttack();
-                            enemyAttack.CanAttack = false;
+                            StartCoroutine(Attack());
                         }                      
                     }                 
 
@@ -157,6 +158,20 @@ namespace Enemies
             
             enemyAnimator.enabled = false;
             enabled = false;
+        }
+        
+        private IEnumerator Attack()
+        {
+            enemyAnimator.LaunchAttack();
+            enemyAttack.CanAttack = false;
+            
+            yield return new WaitForSeconds(0.3f);
+            
+            IsAttacking = true;
+            
+            yield return new WaitForSeconds(1.1f);
+
+            IsAttacking = false;
         }
     }
 

@@ -405,6 +405,7 @@ GameObject:
   - component: {fileID: 129357931}
   - component: {fileID: 129357935}
   - component: {fileID: 129357936}
+  - component: {fileID: 129357937}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -529,6 +530,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+--- !u!114 &129357937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129357930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3046f6e9d7327419e809dc46d07eee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: e443a6589de57414ea3a0ad8bc4f30f1, type: 2}
 --- !u!1 &248790980
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,8 +968,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1734670105}
   sfxSource: {fileID: 347264889}
-  music: []
-  sounds: []
+  music:
+  - name: Main Menu Music 1
+    audio: {fileID: 8300000, guid: 913097c17d1ce4a46803fe26934c1767, type: 3}
+  - name: Main Menu Music 2
+    audio: {fileID: 8300000, guid: 9b30c780c5d7dc74a916d3de0f0658b2, type: 3}
+  - name: Battle Music 1
+    audio: {fileID: 8300000, guid: 7b34b1d430625ac4a91a406e830e0f4d, type: 3}
+  - name: Battle Music 2
+    audio: {fileID: 8300000, guid: 3ced8e7ad39c990499ad0d0303dbb108, type: 3}
+  - name: Battle Music 3
+    audio: {fileID: 8300000, guid: b1850d5c8e7b59b4baa1f3aa1df31421, type: 3}
+  sounds:
+  - name: Click 1
+    audio: {fileID: 8300000, guid: 91d336ef3730ab948bf80f57be3e986a, type: 3}
+  - name: Click 2
+    audio: {fileID: 8300000, guid: e7f15d990fdc1a841a3dee4c63f1c8be, type: 3}
+  - name: Click 3
+    audio: {fileID: 8300000, guid: 1ad78fd6586d8ba4c8a0e9cfe64d6d14, type: 3}
+  - name: Click 4
+    audio: {fileID: 8300000, guid: 6c96f17621974ab469d71b6645c210ae, type: 3}
+  - name: Choose Battle
+    audio: {fileID: 8300000, guid: e49874f19fdb7114bbf776cb9e5f53c0, type: 3}
+  - name: War Cry
+    audio: {fileID: 8300000, guid: 60479571c36aa754ca8d2e0c7abb3dfa, type: 3}
 --- !u!4 &501913449
 Transform:
   m_ObjectHideFlags: 0

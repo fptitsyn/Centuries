@@ -1,3 +1,4 @@
+using Audio;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -27,6 +28,8 @@ namespace UI
 
         public void SetVolume(string type)
         {
+            AudioManager.Instance.PlaySfx("Click " + Random.Range(1, 5));
+            
             float volume;
             
             switch (type)
@@ -41,7 +44,7 @@ namespace UI
                     return;
             }
             
-            mixer.SetFloat(type, volume);
+            mixer.SetFloat(type, Mathf.Log10(volume) * 20);
             PlayerPrefs.SetFloat(type, volume);
         }
     }
