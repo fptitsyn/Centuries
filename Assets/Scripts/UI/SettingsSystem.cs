@@ -28,7 +28,7 @@ namespace UI
 
         public void SetVolume(string type)
         {
-            AudioManager.Instance.PlaySfx("Click " + Random.Range(1, 5));
+            AudioManager.Instance.PlaySfx("Click 4");
             
             float volume;
             

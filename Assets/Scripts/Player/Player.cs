@@ -31,7 +31,7 @@ namespace Player
 
         private IEnumerator FightLost()
         {
-            BattleManager.Instance.BattleData = null;
+            Destroy(BattleManager.Instance);
             AudioManager.Instance.musicSource.Stop();
             AudioManager.Instance.PlaySfx("Defeat SFX");
             yield return new WaitForSeconds(0.5f);
