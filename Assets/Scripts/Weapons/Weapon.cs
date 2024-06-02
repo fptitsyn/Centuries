@@ -3,6 +3,7 @@ using Audio;
 using Enemies;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 namespace Weapons
 {
@@ -17,6 +18,8 @@ namespace Weapons
             {
                 return;
             }
+
+            damage = Random.Range(damage / 2, damage + damage / 2);
             
             GameObject hit = other.gameObject;
             if (hit.CompareTag("Enemy"))

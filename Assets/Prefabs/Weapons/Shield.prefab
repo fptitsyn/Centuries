@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4734455472383341998}
   - component: {fileID: 1186418080388414678}
   - component: {fileID: 3180502388765349757}
+  - component: {fileID: 3865454787503968518}
   m_Layer: 3
   m_Name: Shield
   m_TagString: Weapon
@@ -282,7 +283,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -303,6 +304,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   canBlock: 1
+--- !u!65 &3865454787503968518
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2488156489844678540}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8636861, y: 0.86368585, z: 0.18037438}
+  m_Center: {x: 0, y: 0, z: -0.0027410842}
 --- !u!1 &8789624681247278769
 GameObject:
   m_ObjectHideFlags: 0
