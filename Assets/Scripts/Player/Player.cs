@@ -33,6 +33,7 @@ namespace Player
         {
             Destroy(BattleManager.Instance);
             AudioManager.Instance.musicSource.Stop();
+            AudioManager.Instance.StopCheer();
             AudioManager.Instance.PlaySfx("Defeat SFX");
             yield return new WaitForSeconds(0.5f);
             SceneManager.LoadScene(6);

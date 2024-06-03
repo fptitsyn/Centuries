@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -9,12 +9,17 @@ namespace Audio
     {
         public static AudioManager Instance;
     
-        [Header("------------------Audio Source-----------------")]
+        [Header("------------------Audio Source------------------")]
         public AudioSource musicSource;
         public AudioSource sfxSource;
-        [Header("------------------Audio Clip-----------------")]
+        public AudioSource cheerSource;
+        [Header("------------------Audio Clip--------------------")]
 
         public List<Sound> music, sounds;
+
+        public List<AudioClip> cheers;
+
+        private bool _fighting;
 
         private void Awake()
         {
@@ -52,6 +57,32 @@ namespace Audio
             if (s != null)
             {
                 sfxSource.PlayOneShot(s.audio);
+            }
+        }
+
+        public void StartCheer()
+        {
+            StartCoroutine(Cheer());
+        }
+
+        public void StopCheer()
+        {
+            cheerSource.Stop();
+            _fighting = false;
+            StopCoroutine(Cheer());
+        }
+        
+        private IEnumerator Cheer()
+        {
+            _fighting = true;
+            while (_fighting)
+            {
+                AudioClip randomClip = cheers[Random.Range(0, cheers.Count)];
+                cheerSource.clip = randomClip;
+                cheerSource.Play();
+
+                yield return new WaitForSeconds(randomClip.length);
+                cheerSource.Stop();
             }
         }
     }

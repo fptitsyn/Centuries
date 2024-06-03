@@ -73,6 +73,7 @@ namespace Weapons
         private IEnumerator WinFight()
         {
             AudioManager.Instance.musicSource.Stop();
+            AudioManager.Instance.StopCheer();
             yield return new WaitForSeconds(1f);
             AudioManager.Instance.PlaySfx("Victory SFX");
             yield return new WaitForSeconds(2f);

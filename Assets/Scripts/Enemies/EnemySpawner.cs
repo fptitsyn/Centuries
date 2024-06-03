@@ -34,6 +34,7 @@ namespace Enemies
         private void Start()
         {
             AudioManager.Instance.PlayMusic("Battle Music " + Random.Range(1, 4));
+            AudioManager.Instance.StartCheer();
             maxCount = BattleManager.Instance.BattleData.EnemyAmount;
         }
 
