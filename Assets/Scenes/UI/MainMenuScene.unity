@@ -997,14 +997,22 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 01c9f1b6f06aa434287d3dae7ae6ee8b, type: 3}
   - name: Defeat SFX
     audio: {fileID: 8300000, guid: 590b2f275bf59884e918882980bb1401, type: 3}
-  - name: Sword Hit
-    audio: {fileID: 8300000, guid: 5e12da6cc4b5de346b88cb3ccca5fb4b, type: 3}
   - name: Death 1
     audio: {fileID: 8300000, guid: 33bdcc6176fe83b43967b041ab8b1126, type: 3}
   - name: Death 2
     audio: {fileID: 8300000, guid: d74cae538bb1b564b944c941f59d8896, type: 3}
   - name: Death 3
     audio: {fileID: 8300000, guid: eb38bce2a8ef484489e307e99c92fa03, type: 3}
+  - name: Sword Hit 1
+    audio: {fileID: 8300000, guid: 5e12da6cc4b5de346b88cb3ccca5fb4b, type: 3}
+  - name: Sword Hit 2
+    audio: {fileID: 8300000, guid: e6edb3093b3096f4f82d7f84b247bf47, type: 3}
+  - name: Sword Hit 3
+    audio: {fileID: 8300000, guid: 5b7b63784fc74d74199f165611507626, type: 3}
+  - name: Sword Hit 4
+    audio: {fileID: 8300000, guid: 1a96b5b571b2a63449a2b5e044e6a682, type: 3}
+  - name: Sword Hit 5
+    audio: {fileID: 8300000, guid: d2aa0c7d647debe4aaf129ef29607bcb, type: 3}
   cheers:
   - {fileID: 8300000, guid: 7f988338962ff5b48b1c2ac61cc01164, type: 3}
   - {fileID: 8300000, guid: de243542e0e8bd944b2a47f3f36222bb, type: 3}

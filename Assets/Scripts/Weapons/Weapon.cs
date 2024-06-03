@@ -30,7 +30,6 @@ namespace Weapons
                     return;
                 }
                 Debug.Log("enemy");
-                AudioManager.Instance.PlaySfx("Sword Hit");
                 if (enemy.GetComponent<EnemyAI>().health - damage <= 0)
                 {
                     enemy.GetComponent<EnemyAI>().health = 0;
@@ -51,7 +50,6 @@ namespace Weapons
                 if (canBlock || hit.GetComponent<Weapon>().canBlock)
                 {
                     Debug.Log("Block");
-                    AudioManager.Instance.PlaySfx("Sword Hit");
                 }
             }
             else if (hit.CompareTag("Player"))
@@ -65,9 +63,10 @@ namespace Weapons
                 
                 Player.Player player = hit.GetComponentInChildren<Player.Player>();
                 Debug.Log("player hit");
-                AudioManager.Instance.PlaySfx("Sword Hit");
                 player.TakeDamage(damage);
             }
+            
+            AudioManager.Instance.PlaySfx("Sword Hit" + Random.Range(1, 6));
         }
 
         private IEnumerator WinFight()
