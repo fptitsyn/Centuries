@@ -60,13 +60,13 @@ namespace Enemies
         private Vector3 GenerateStartPosition()
         {
             int randomX = Random.Range(minX, maxX);
-            while (randomX is > -15 and < 0)
+            while (randomX is > -13 and < 0)
             {
                 randomX = Random.Range(minX, maxX);
             }
 
             int randomZ = Random.Range(minY, maxY);
-            while (randomZ is > -10 and < 0)
+            while (randomZ is > -8 and < 0)
             {
                 randomZ = Random.Range(minX, maxX);
             }
