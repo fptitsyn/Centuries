@@ -46,6 +46,11 @@ namespace Enemies
             _currentState = EnemyState.Roaming;
 
             _roamPosition = GenerateRoamPosition();
+            
+            if (PlayerPrefs.HasKey(NameHelper.LevelPrefs))
+            {
+                health += PlayerPrefs.GetInt(NameHelper.LevelPrefs) * Random.Range(1, 5);
+            }
         }
 
         private void Update()

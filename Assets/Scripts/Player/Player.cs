@@ -1,3 +1,4 @@
+using System;
 using Audio;
 using System.Collections;
 using System.Globalization;
@@ -13,6 +14,14 @@ namespace Player
         [SerializeField] private TMP_Text hpText;
     
         [SerializeField] private float health;
+
+        private void Start()
+        {
+            if (PlayerPrefs.HasKey(NameHelper.LevelPrefs))
+            {
+                health += PlayerPrefs.GetInt(NameHelper.LevelPrefs) * 5;
+            }
+        }
 
         public void TakeDamage(float damage)
         {

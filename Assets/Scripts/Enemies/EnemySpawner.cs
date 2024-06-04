@@ -1,7 +1,6 @@
 using Audio;
 using UI;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Enemies
 {
@@ -60,7 +59,19 @@ namespace Enemies
 
         private Vector3 GenerateStartPosition()
         {
-            var startPos = new Vector3(Random.Range(minX, maxX), height, Random.Range(minY, maxY));
+            int randomX = Random.Range(minX, maxX);
+            while (randomX is > -15 and < 0)
+            {
+                randomX = Random.Range(minX, maxX);
+            }
+
+            int randomZ = Random.Range(minY, maxY);
+            while (randomZ is > -10 and < 0)
+            {
+                randomZ = Random.Range(minX, maxX);
+            }
+            
+            var startPos = new Vector3(randomX, height, randomZ);
 
             return startPos;
         }

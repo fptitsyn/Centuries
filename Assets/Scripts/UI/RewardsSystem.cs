@@ -24,8 +24,20 @@ namespace UI
 
         public void SaveRewards()
         {
-            PlayerPrefs.SetInt(NameHelper.XpPrefs, _xpReward);
-            PlayerPrefs.SetInt(NameHelper.GoldPrefs, _goldReward);
+            int prevXp = 0;
+            int prevGold = 0;
+            
+            if (PlayerPrefs.HasKey(NameHelper.XpPrefs))
+            {
+                prevXp = PlayerPrefs.GetInt(NameHelper.XpPrefs);
+            }
+            if (PlayerPrefs.HasKey(NameHelper.GoldPrefs))
+            {
+                prevGold = PlayerPrefs.GetInt(NameHelper.GoldPrefs);
+            }
+            
+            PlayerPrefs.SetInt(NameHelper.XpPrefs, _xpReward + prevXp);
+            PlayerPrefs.SetInt(NameHelper.GoldPrefs, _goldReward + prevGold);
         }
     }
 }

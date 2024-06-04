@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -10,12 +9,12 @@ public class StartGame : MonoBehaviour
     {
         if (PlayerPrefs.HasKey(NameHelper.MusicVolume))
         {
-            mixer.SetFloat("Music Volume", Mathf.Log10(PlayerPrefs.GetFloat(NameHelper.MusicVolume)) * 20);
+            mixer.SetFloat(NameHelper.MusicVolume, Mathf.Log10(PlayerPrefs.GetFloat(NameHelper.MusicVolume)) * 20);
         }
             
         if (PlayerPrefs.HasKey(NameHelper.SoundVolume))
         {
-            mixer.SetFloat("Sound Volume", Mathf.Log10(PlayerPrefs.GetFloat(NameHelper.SoundVolume)) * 20);
+            mixer.SetFloat(NameHelper.SoundVolume, Mathf.Log10(PlayerPrefs.GetFloat(NameHelper.SoundVolume)) * 20);
         }
     }
 }

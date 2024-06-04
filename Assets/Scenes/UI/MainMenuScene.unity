@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7619169, g: 0.7857207, b: 0.73050916, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1014,7 +1014,6 @@ MonoBehaviour:
   - name: Sword Hit 5
     audio: {fileID: 8300000, guid: d2aa0c7d647debe4aaf129ef29607bcb, type: 3}
   cheers:
-  - {fileID: 8300000, guid: 7f988338962ff5b48b1c2ac61cc01164, type: 3}
   - {fileID: 8300000, guid: de243542e0e8bd944b2a47f3f36222bb, type: 3}
   - {fileID: 8300000, guid: 01cade89172ce554d9478ad200566b38, type: 3}
   - {fileID: 8300000, guid: c02188cc6217dd6459c7eed7327c579d, type: 3}
@@ -1221,7 +1220,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -7586495939420569780, guid: e443a6589de57414ea3a0ad8bc4f30f1, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0

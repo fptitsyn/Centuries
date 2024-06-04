@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using Slider = UnityEngine.UI.Slider;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -8,7 +8,7 @@ namespace UI
     {
         [SerializeField] private TMP_Text levelText;
         [SerializeField] private TMP_Text goldText;
-        [SerializeField] private Slider xpSlider;
+        [SerializeField] private Image xpBar;
     
         private int _xp;
         private int _level = 1;
@@ -39,15 +39,16 @@ namespace UI
         {
             levelText.text = _level.ToString();
             _xpToLevelUp = 1000 + _level * 100;
-            // xpSlider.value = _xp;
-            // xpSlider.maxValue = _xpToLevelUp;
-        
+
             if (_xp >= _xpToLevelUp)
             {
                 _level++;
                 PlayerPrefs.SetInt(NameHelper.LevelPrefs, _level);
-                _xp = 0;
+                _xp -= _xpToLevelUp;
+                PlayerPrefs.SetInt(NameHelper.XpPrefs, _xp);
             }
+            
+            xpBar.fillAmount = (float) _xp / _xpToLevelUp;
         }
     }
 }

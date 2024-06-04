@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StartNewGame : MonoBehaviour
 {
     public void ClearPrefs()
     {
-        PlayerPrefs.DeleteAll(); 
+        PlayerPrefs.DeleteKey(NameHelper.LevelPrefs);
+        PlayerPrefs.DeleteKey(NameHelper.XpPrefs);
+        PlayerPrefs.DeleteKey(NameHelper.GoldPrefs);
     }
 }
