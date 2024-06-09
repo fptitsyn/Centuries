@@ -11,7 +11,6 @@ namespace Enemies
 
         public void LaunchAttack()
         {
-            // int attackTrigger = Animator.StringToHash("Attack1");
             int attackTrigger = Animator.StringToHash("Attack" + Random.Range(1, 5));
             _animator.SetTrigger(attackTrigger);
         }
@@ -28,7 +27,6 @@ namespace Enemies
 
         public void Die()
         {
-            Debug.Log("Anim");
             int deathTrigger = Animator.StringToHash("Death" + Random.Range(1, 4));
             _animator.SetTrigger(deathTrigger);
         }
